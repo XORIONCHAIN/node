@@ -1,0 +1,268 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 37140,
+      "max": [
+        0.9810819029808044,
+        0.9851125478744507,
+        0.9808034300804138
+      ],
+      "min": [
+        -0.9810819029808044,
+        -0.9851125478744507,
+        -0.9808034896850586
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 445680,
+      "componentType": 5126,
+      "count": 37140,
+      "max": [
+        0.9999895095825195,
+        0.999842643737793,
+        0.9999839067459106
+      ],
+      "min": [
+        -0.9999895095825195,
+        -0.999842643737793,
+        -0.9999839067459106
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 210228,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 891360,
+      "componentType": 5126,
+      "count": 8100,
+      "max": [
+        0.7414327263832092,
+        0.7482943534851074,
+        0.7411546111106873
+      ],
+      "min": [
+        -0.7414328455924988,
+        -0.7482944130897522,
+        -0.7411546111106873
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 988560,
+      "componentType": 5126,
+      "count": 8100,
+      "max": [
+        0.9995037317276001,
+        0.998403787612915,
+        0.9996734857559204
+      ],
+      "min": [
+        -0.9995037317276001,
+        -0.998404860496521,
+        -0.9996734857559204
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 840912,
+      "componentType": 5125,
+      "count": 34200,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "INinja (https://sketchfab.com/aleksandarpopovic2)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/ico-sphere-9126081870e442c09cb0ceb5c50cb91d",
+      "title": "Ico Sphere"
+    },
+    "generator": "Sketchfab-12.67.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 977712,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1085760,
+      "byteOffset": 977712,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2063472,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4322209999999998,
+          0.18842499999999993,
+          0.7999999999999999,
+          1.0
+        ],
+        "roughnessFactor": 0.1841152436021378
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        0.10375733762897564
+      ],
+      "name": "Material.002"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        1.1061149835586548,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1061149835586548,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1061149835586548,
+        0.0,
+        0.0,
+        0.3469107747077942,
+        0.0,
+        1.0
+      ],
+      "name": "Icosphere_0"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_5"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ico Sphere
+* source:	https://sketchfab.com/3d-models/ico-sphere-9126081870e442c09cb0ceb5c50cb91d
+* author:	INinja (https://sketchfab.com/aleksandarpopovic2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ico Sphere" (https://sketchfab.com/3d-models/ico-sphere-9126081870e442c09cb0ceb5c50cb91d) by INinja (https://sketchfab.com/aleksandarpopovic2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
