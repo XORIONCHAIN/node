@@ -1,5 +1,5 @@
 // pages/index.js (or your home page)
-import React, { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls, useGLTF } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -7,9 +7,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '../Layout/Navbar';
 import Herovid from './Herovid';
-import Footer from './Footer'
+import FooterContent from './Footer';
 import Features from './Features';
-import StatsDashboard from './HeroSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,37 +49,7 @@ const Home = () => {
       </div>
 
       {/* Header */}
-      <motion.header 
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 flex justify-between items-center px-4 md:px-8 py-6"
-      >
-        <motion.div 
-          whileHover={{ scale: 1.05 }}
-          className="font-bold text-xl md:text-2xl text-white tracking-wider"
-        >
-          XORION
-        </motion.div>
-        <motion.nav 
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden md:flex flex-col gap-2 items-end text-sm font-medium"
-        >
-          {['About', 'Developers', 'Ecosystem', 'News', 'Use Oasis', 'Community'].map((item, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              whileHover={{ x: -5, color: '#3b82f6' }}
-              className="text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </motion.nav>
-      </motion.header>
-
+      <Navbar />
       {/* Main Content - Restored Original Layout */}
       <motion.main 
         initial={{ opacity: 0 }}
@@ -99,7 +68,7 @@ const Home = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 font-geist"
           >
             <span className="text-white">Xorion is a new era of</span>{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">blockchain</span>{' '}
@@ -124,7 +93,6 @@ const Home = () => {
             </motion.span>
           </motion.button>
         </motion.div>
-
         {/* 3D Canvas - Right Column */}
         <motion.div 
           initial={{ x: 100, opacity: 0 }}
@@ -153,7 +121,7 @@ const Home = () => {
       </motion.main>
       <Herovid />
       <Features></Features>
-      <Footer></Footer>
+      <FooterContent></FooterContent>
     </div>
   );
 };

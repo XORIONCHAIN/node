@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaRocket, FaShieldAlt, FaBolt, FaCubes, FaNetworkWired, FaCode, FaGlobe, FaInfinity } from 'react-icons/fa';
+import { FaRocket, FaBolt, FaCubes, FaNetworkWired, FaCode } from 'react-icons/fa';
+import Navbar from '../Layout/Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,6 +79,7 @@ const Herovid = () => {
 
   return (
     <div ref={containerRef} className="relative bg-black overflow-hidden font-geist">
+      <Navbar />
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="floating-element absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>

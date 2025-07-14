@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FaServer, FaLock, FaHeartbeat, FaCube, FaExchangeAlt } from 'react-icons/fa';
+import Navbar from '../Layout/Navbar';
 
 const blockchainStats = [
   { icon: <FaServer className="text-[#000F96] w-8 h-8" />, label: 'Validators', value: '2,500' },
@@ -20,6 +21,7 @@ const bentoGrid = [
 const StatsDashboard: React.FC = () => {
   return (
     <div className="relative w-screen min-h-[60vh] bg-white py-16 px-4 flex items-center justify-center">
+      <Navbar />
       <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 grid-rows-3 gap-6">
         {bentoGrid.map((stat, i) => (
           <div

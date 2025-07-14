@@ -1,5 +1,5 @@
 import { useGSAP } from '@gsap/react';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -10,6 +10,7 @@ import {
   Network,
   Code
 } from 'lucide-react';
+import Navbar from '../Layout/Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,85 +60,16 @@ export default function Features() {
     }
   };
 
+  // Animation variants for cards
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 60, 
-      scale: 0.9,
-      rotateX: -15
-    },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      rotateX: 0,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
-
-  const iconVariants = {
-    hidden: { 
-      scale: 0, 
-      rotate: -180,
-      opacity: 0 
+        duration: 0.7,
+      },
     },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.3
-      }
-    }
-  };
-
-  const textVariants = {
-    hidden: { 
-      opacity: 0, 
-      x: -20 
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.4
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.8 
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        delay: 0.6
-      }
-    },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.2
-      }
-    },
-    tap: {
-      scale: 0.95
-    }
   };
 
   const features = [
@@ -174,7 +106,8 @@ export default function Features() {
   ];
 
   return (
-    <div ref={container} className="w-full min-h-screen lg:h-[500vh] bg-black text-white font-geist">
+    <div className="relative">
+      <Navbar />
       {/* Mobile & Tablet - Vertical layout */}
       <div className="lg:hidden w-full">
         <motion.div 
@@ -213,18 +146,14 @@ export default function Features() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -5,
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ scale: 1.03, boxShadow: '0 4px 32px 0 rgba(59,130,246,0.10)' }}
                 className="feature-card"
               >
                 {/* Card Container */}
                 <div className="relative w-full">
                   {/* Back Layer - Gradient rectangle offset */}
                   <motion.div 
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className={`absolute -top-3 -left-3 w-full h-full bg-gradient-to-br ${feature.gradient} rounded-2xl shadow-lg blur-sm`}
@@ -232,7 +161,7 @@ export default function Features() {
                  
                   {/* Front Layer - Dark glassmorphism rectangle */}
                   <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="relative w-full bg-black/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 md:p-8 mt-6"
@@ -240,57 +169,18 @@ export default function Features() {
                     {/* Content Section */}
                     <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                       {/* Icon */}
-                      <motion.div 
-                        variants={iconVariants}
-                        className="flex-shrink-0"
-                      >
-                        <motion.div 
-                          whileHover={{ 
-                            scale: 1.1, 
-                            rotate: 5,
-                            transition: { duration: 0.2 }
-                          }}
-                          className={`p-3 md:p-4 rounded-xl bg-gradient-to-br ${feature.gradient} bg-opacity-20`}
-                        >
+                      <div className="mb-4 md:mb-0 flex-shrink-0">
                         {feature.icon}
-                        </motion.div>
-                      </motion.div>
-                     
-                      {/* Text Content */}
-                      <motion.div 
-                        variants={textVariants}
-                        className="flex-1"
-                      >
+                      </div>
                       {/* Title */}
-                        <motion.h2 
-                          whileHover={{ color: "#00e676" }}
-                          transition={{ duration: 0.3 }}
-                          className="text-xl md:text-2xl font-semibold text-white mb-3 font-sans leading-tight"
-                        >
+                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-0 font-geist leading-tight">
                         {feature.title}
-                        </motion.h2>
-                     
-                      {/* Body Text */}
-                        <motion.p 
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{ delay: 0.5, duration: 0.6 }}
-                          className="text-gray-300 text-sm md:text-base leading-relaxed font-sans mb-4"
-                        >
-                        {feature.description}
-                        </motion.p>
-                   
-                    {/* Button */}
-                        <motion.button 
-                          variants={buttonVariants}
-                          whileHover="hover"
-                          whileTap="tap"
-                          className="bg-[#00e676] hover:bg-[#00c853] text-black font-medium px-4 py-2 rounded-lg text-sm font-sans transition-all duration-200 shadow-md hover:shadow-lg"
-                        >
-                        Learn More
-                        </motion.button>
-                      </motion.div>
+                      </h2>
                     </div>
+                    {/* Body Text */}
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed font-geist mt-4 md:mt-2">
+                      {feature.description}
+                    </p>
                   </motion.div>
                 </div>
               </motion.div>

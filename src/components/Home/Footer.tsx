@@ -1,5 +1,5 @@
-import React from 'react';
 import { FaTwitter, FaGithub, FaDiscord, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function FooterContent() {
   return (
@@ -13,11 +13,14 @@ export default function FooterContent() {
 const FooterNav = () => (
   <div className="flex flex-wrap gap-20 mb-8">
     <div className="flex flex-col gap-2 min-w-[120px]">
-      <h3 className="mb-2 uppercase text-[#ffffff80] text-xs">About</h3>
-      <p className="hover:text-[#00e676] cursor-pointer">Home</p>
-      <p className="hover:text-[#00e676] cursor-pointer">Projects</p>
-      <p className="hover:text-[#00e676] cursor-pointer">Our Mission</p>
-      <p className="hover:text-[#00e676] cursor-pointer">Contact Us</p>
+      <h3 className="mb-2 uppercase text-[#ffffff80] text-xs">Pages</h3>
+      <Link to="/" className="hover:text-[#00e676] cursor-pointer">Home</Link>
+      <Link to="/about" className="hover:text-[#00e676] cursor-pointer">About</Link>
+      <Link to="/community" className="hover:text-[#00e676] cursor-pointer">Community</Link>
+      <Link to="/developers" className="hover:text-[#00e676] cursor-pointer">Developers</Link>
+      <Link to="/ecosystem" className="hover:text-[#00e676] cursor-pointer">Ecosystem</Link>
+      <Link to="/usecases" className="hover:text-[#00e676] cursor-pointer">Usecases</Link>
+      <Link to="/blogs" className="hover:text-[#00e676] cursor-pointer">Blogs</Link>
     </div>
     <div className="flex flex-col gap-2 min-w-[120px]">
       <h3 className="mb-2 uppercase text-[#ffffff80] text-xs">Education</h3>

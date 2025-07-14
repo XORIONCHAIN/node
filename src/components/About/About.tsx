@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaShieldAlt, FaCubes, FaBolt, FaLock, FaRocket, FaNetworkWired } from 'react-icons/fa';
-import Footer from '../Home/Footer'
+import FooterContent from '../Home/Footer';
+import Navbar from '../Layout/Navbar';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,39 +85,8 @@ const About = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative bg-black font-geist">
-      {/* Header */}
-      <motion.header 
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 flex justify-between items-center px-4 md:px-8 py-6"
-      >
-        <motion.div 
-          whileHover={{ scale: 1.05 }}
-          className="font-bold text-xl md:text-2xl text-white tracking-wider"
-        >
-          XORION
-        </motion.div>
-        <motion.nav 
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden md:flex flex-col gap-2 items-end text-sm font-medium"
-        >
-          {['About', 'Developers', 'Ecosystem', 'News', 'Use Oasis', 'Community'].map((item, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              whileHover={{ x: -5, color: '#3b82f6' }}
-              className="text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </motion.nav>
-      </motion.header>
-      
+    <div ref={containerRef} className="relative bg-black font-geist min-h-screen overflow-x-hidden">
+      <Navbar />
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="floating-bg absolute top-20 left-10 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
@@ -257,7 +227,7 @@ const About = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
+      <FooterContent />
     </div>
   );
 };
