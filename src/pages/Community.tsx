@@ -228,7 +228,7 @@ const Community: React.FC = () => {
       <section className="relative py-10 px-2 md:px-6">
         <h2 className="text-3xl md:text-4xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-8">Upcoming Events</h2>
         <div className="max-w-2xl mx-auto flex flex-col gap-6">
-          {events.map((event, idx) => (
+          {events.map((event) => (
             <div key={event.date} className="flex items-center gap-4 bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
               <div className="flex flex-col items-center justify-center min-w-[70px]">
                 <div className="text-lg font-bold text-cyan-400">{new Date(event.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</div>

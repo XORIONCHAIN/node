@@ -395,7 +395,7 @@ const DevPortal = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-between mb-8"
+            className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8"
           >
             
             <div>
@@ -413,7 +413,7 @@ const DevPortal = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="relative"
+              className="relative w-full sm:w-auto"
             >
               <div className={`relative transition-all duration-300 ${isSearchFocused ? 'scale-105' : ''}`}>
                 <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -424,7 +424,7 @@ const DevPortal = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
-                  className="w-80 pl-12 pr-4 py-3 bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none text-white placeholder-gray-400 transition-all duration-300"
+                  className="w-full sm:w-80 pl-12 pr-4 py-3 bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none text-white placeholder-gray-400 transition-all duration-300"
                 />
               </div>
             </motion.div>

@@ -54,8 +54,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link 
           to="/" 
-          className="text-xl md:text-2xl font-bold tracking-tight text-white hover:scale-105 transition-transform duration-300"
+          className="flex items-center gap-2 text-xl md:text-2xl font-bold tracking-tight text-white hover:scale-105 transition-transform duration-300"
         >
+          <img src="/logo%20(1).svg" alt="Xorion Logo" className="h-8 w-8 md:h-10 md:w-10 object-contain" />
           <span className="bg-white bg-clip-text text-transparent">
             XORION
           </span>

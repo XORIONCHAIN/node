@@ -1,4 +1,4 @@
-import { FaGithub, FaDiscord, FaEnvelope, FaTelegram, FaReddit, FaMedium } from 'react-icons/fa';
+import { FaGithub, FaDiscord, FaTelegram, FaReddit, FaMedium } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
