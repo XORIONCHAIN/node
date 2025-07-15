@@ -258,7 +258,7 @@ const BlogNewsroom = () => {
                 key={post.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
@@ -338,10 +338,10 @@ const BlogNewsroom = () => {
             {filteredPosts.map((post, index) => (
               <motion.article
                 key={post.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.02, rotate: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.18, delay: index * 0.01, type: 'tween' }}
                 className="group cursor-pointer"
               >
                 <div className="relative bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">

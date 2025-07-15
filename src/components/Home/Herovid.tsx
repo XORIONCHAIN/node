@@ -13,27 +13,6 @@ const Herovid = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   useEffect(() => {
-    // Floating animations
-    gsap.to(".floating-element", {
-      y: -30,
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: "power2.inOut",
-      stagger: 0.5
-    });
-
-    // Parallax effect
-    gsap.to(".parallax-bg", {
-      y: -100,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1
-      }
-    });
-
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -169,18 +148,10 @@ const Herovid = () => {
             {techFeatures.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)"
-                }}
-                transition={{ 
-                  delay: feature.delay, 
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
+                whileHover={{}}
+                transition={{ delay: feature.delay, duration: 0.3, type: "tween" }}
                 className={`relative group cursor-pointer`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
@@ -229,18 +200,18 @@ const Herovid = () => {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(59, 130, 246, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-12 py-6 rounded-3xl text-xl font-bold transition-all duration-300 flex items-center gap-3"
+              whileHover={{}}
+              whileTap={{}}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-12 py-6 rounded-3xl text-xl font-bold transition-colors duration-200 flex items-center gap-3"
             >
               <FaRocket className="w-6 h-6" />
               <span>Start Building</span>
             </motion.button>
             
             <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(139, 92, 246, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-purple-500 hover:bg-purple-500/10 text-purple-400 hover:text-white px-12 py-6 rounded-3xl text-xl font-bold transition-all duration-300 flex items-center gap-3"
+              whileHover={{}}
+              whileTap={{}}
+              className="border-2 border-purple-500 hover:bg-purple-500/10 text-purple-400 hover:text-white px-12 py-6 rounded-3xl text-xl font-bold transition-colors duration-200 flex items-center gap-3"
             >
               <FaCode className="w-6 h-6" />
               <span>View Docs</span>
@@ -251,42 +222,7 @@ const Herovid = () => {
 
       {/* Floating Elements */}
       <div className="fixed inset-0 pointer-events-none">
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{ 
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 right-10 w-4 h-4 bg-blue-400 rounded-full opacity-60"
-        />
-        <motion.div
-          animate={{ 
-            y: [0, 20, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-1/4 left-10 w-3 h-3 bg-purple-400 rounded-full opacity-60"
-        />
-        <motion.div
-          animate={{ 
-            y: [0, -15, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{ 
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/2 left-1/4 w-2 h-2 bg-pink-400 rounded-full opacity-60"
-        />
+        {/* Remove floating animated dots for minimalism */}
       </div>
     </div>
   );

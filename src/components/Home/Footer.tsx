@@ -1,4 +1,5 @@
-import { FaTwitter, FaGithub, FaDiscord, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaDiscord, FaEnvelope, FaTelegram, FaReddit, FaMedium } from 'react-icons/fa';
+import { SiX } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 export default function FooterContent() {
@@ -39,10 +40,12 @@ const FooterNav = () => (
     <div className="flex flex-col gap-2 min-w-[120px]">
       <h3 className="mb-2 uppercase text-[#ffffff80] text-xs">Connect</h3>
       <div className="flex gap-4 mt-1">
-        <a href="#" className="hover:text-[#00e676]"><FaTwitter size={20} /></a>
-        <a href="#" className="hover:text-[#00e676]"><FaGithub size={20} /></a>
-        <a href="#" className="hover:text-[#00e676]"><FaDiscord size={20} /></a>
-        <a href="#" className="hover:text-[#00e676]"><FaEnvelope size={20} /></a>
+        <a href="https://x.com/xorionchain?s=21" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="hover:text-[#00e676] transition-colors"><SiX size={20} /></a>
+        <a href="https://github.com/settings/admin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-[#00e676] transition-colors"><FaGithub size={20} /></a>
+        <a href="https://discord.gg/ucc278yJZt" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="hover:text-[#00e676] transition-colors"><FaDiscord size={20} /></a>
+        <a href="https://t.me/Xorion_Chain" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="hover:text-[#00e676] transition-colors"><FaTelegram size={20} /></a>
+        <a href="https://www.reddit.com/user/Xorion_Chain/" target="_blank" rel="noopener noreferrer" aria-label="Reddit" className="hover:text-[#00e676] transition-colors"><FaReddit size={20} /></a>
+        <a href="https://medium.com/@xorionchain" target="_blank" rel="noopener noreferrer" aria-label="Medium" className="hover:text-[#00e676] transition-colors"><FaMedium size={20} /></a>
       </div>
     </div>
   </div>
@@ -53,6 +56,6 @@ const FooterBottom = () => (
     <h1 className="text-[10vw] md:text-[7vw] font-extrabold leading-[0.8] mt-10 text-white drop-shadow-lg">
       XORION
     </h1>
-    <p className="text-white/70 text-sm">© {new Date().getFullYear()} Your Company</p>
+    <p className="text-white/70 text-sm">© {new Date().getFullYear()} XORION</p>
   </div>
 );

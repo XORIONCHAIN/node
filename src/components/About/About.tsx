@@ -111,9 +111,9 @@ const About = () => {
               <div className="relative">
                 <motion.h1 
                   className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   XORION
                 </motion.h1>
@@ -121,9 +121,9 @@ const About = () => {
               </div>
               
               <motion.p 
-                initial={{ y: 50, opacity: 0 }}
+                initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
                 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 leading-relaxed font-light"
               >
                 The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold">quantum-proof</span> L1 blockchain that redefines what's possible.
@@ -139,28 +139,32 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <motion.div 
-                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: 'tween', duration: 0.18 }}
                   className="bg-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20"
                 >
                   <div className="text-2xl md:text-4xl font-bold text-white">100K+</div>
                   <div className="text-gray-400 text-xs md:text-sm">TPS</div>
                 </motion.div>
                 <motion.div 
-                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: 'tween', duration: 0.18 }}
                   className="bg-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20"
                 >
                   <div className="text-2xl md:text-4xl font-bold text-white">∞</div>
                   <div className="text-gray-400 text-xs md:text-sm">Scalability</div>
                 </motion.div>
                 <motion.div 
-                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: 'tween', duration: 0.18 }}
                   className="bg-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20"
                 >
                   <div className="text-2xl md:text-4xl font-bold text-white">99.9%</div>
                   <div className="text-gray-400 text-xs md:text-sm">Uptime</div>
                 </motion.div>
                 <motion.div 
-                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: 'tween', duration: 0.18 }}
                   className="bg-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20"
                 >
                   <div className="text-2xl md:text-4xl font-bold text-white">0</div>
@@ -193,19 +197,10 @@ const About = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 100, rotate: -5 }}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  rotate: 2,
-                  z: 10
-                }}
-                transition={{ 
-                  delay: feature.delay, 
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ delay: feature.delay, duration: 0.18, type: 'tween' }}
                 className="relative group cursor-pointer"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>

@@ -318,19 +318,10 @@ const Ecosystem = () => {
             {dappsShowcase.map((dapp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 100, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  rotate: 5,
-                  z: 10
-                }}
-                transition={{ 
-                  delay: index * 0.1, 
-                  duration: 0.6,
-                  type: "spring",
-                  stiffness: 120
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ delay: index * 0.03, duration: 0.18, type: "tween" }}
                 className="parallax-card relative group cursor-pointer"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${dapp.color} rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-300`}></div>

@@ -62,12 +62,12 @@ export default function Features() {
 
   // Animation variants for cards
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.4,
       },
     },
   };
@@ -146,7 +146,8 @@ export default function Features() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ scale: 1.03, boxShadow: '0 4px 32px 0 rgba(59,130,246,0.10)' }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: 'tween', duration: 0.18 }}
                 className="feature-card"
               >
                 {/* Card Container */}

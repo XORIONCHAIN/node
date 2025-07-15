@@ -1,17 +1,17 @@
-// pages/index.js (or your home page)
-import { Suspense, useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls, useGLTF } from '@react-three/drei';
+import { useEffect, useRef, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '../Layout/Navbar';
-import Herovid from './Herovid';
 import FooterContent from './Footer';
+import Herovid from './Herovid';
 import Features from './Features';
+import { Canvas } from '@react-three/fiber';
+import { Center, OrbitControls, useGLTF } from '@react-three/drei';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Three.js GLTF Model Component
 function SceneModel() {
   const { scene } = useGLTF('/ico_sphere/scene.gltf');
   return (
@@ -127,3 +127,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

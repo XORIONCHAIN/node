@@ -147,10 +147,10 @@ const DevPortal = () => {
               {quickStartCards.map((card, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ delay: index * 0.02, type: 'tween', duration: 0.18 }}
                   className="group cursor-pointer"
                 >
                   <div className="relative">
