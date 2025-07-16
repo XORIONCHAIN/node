@@ -85,10 +85,10 @@ const DevPortal = () => {
       color: 'from-blue-500 to-purple-500'
     },
     {
-      title: 'Client Milestones',
-      description: 'Project deliverables and milestone tracking',
+      title: 'White Paper',
+      description: 'Official white paper and technical vision',
       icon: <FaClipboardList className="w-6 h-6" />,
-      link: 'Client Milestones and Deliverables.pdf',
+      link: '/whitepaper.pdf',
       color: 'from-green-500 to-cyan-500'
     },
     {
@@ -157,16 +157,36 @@ const DevPortal = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${card.color} rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
                     <div className="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className={`p-3 rounded-xl bg-gradient-to-br ${card.color}`}>
-                          {card.icon}
-                        </div>
+                        <div className={`p-3 rounded-xl bg-gradient-to-br ${card.color}`}>{card.icon}</div>
                         <h3 className="text-xl font-bold text-white">{card.title}</h3>
                       </div>
                       <p className="text-gray-300 mb-4">{card.description}</p>
-                      <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
-                        <span className="text-sm">View Documentation</span>
-                        <FaChevronRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </div>
+                      {card.title === 'White Paper' ? (
+                        <div className="flex items-center gap-2 mt-2">
+                          <a
+                            href={card.link}
+                            download
+                            className="flex items-center px-2 py-1 text-xs rounded bg-white/10 hover:bg-white/20 text-blue-400 border border-white/10 hover:border-white/30 transition-all"
+                            title="Download White Paper"
+                          >
+                            <FaDownload className="w-3 h-3 mr-1" /> Download
+                          </a>
+                          <a
+                            href={card.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-2 py-1 text-xs rounded bg-white/10 hover:bg-white/20 text-green-400 border border-white/10 hover:border-white/30 transition-all"
+                            title="Open in new tab"
+                          >
+                            <FaExternalLinkAlt className="w-3 h-3 mr-1" /> Open
+                          </a>
+                        </div>
+                      ) : (
+                        <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                          <span className="text-sm">View Documentation</span>
+                          <FaChevronRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>

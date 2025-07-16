@@ -44,7 +44,7 @@ export default function Navbar() {
     <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${
       scrolled ? 'py-2' : 'py-4'
     }`}>
-      <div className={`absolute inset-0 transition-all duration-500 ${
+      <div className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
         scrolled 
           ? 'bg-black/30 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
           : 'bg-black/40 backdrop-blur-xl border-b border-white/5 shadow-lg'
