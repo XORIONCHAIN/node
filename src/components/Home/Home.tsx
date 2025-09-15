@@ -81,6 +81,7 @@ const Home = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://explorer.xorion.network/explorer', '_blank')}
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 inline-flex items-center gap-3"
           >
             <span>Build Now</span>

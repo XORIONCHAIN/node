@@ -81,22 +81,25 @@ const DevPortal = () => {
       title: 'Master Documentation',
       description: 'Complete technical documentation and architecture overview',
       icon: <FaBookOpen className="w-6 h-6" />,
-      link: 'Master file.pdf',
-      color: 'from-blue-500 to-purple-500'
+      link: 'https://xorion-chain.gitbook.io/xorion-chain-docs/',
+      color: 'from-blue-500 to-purple-500',
+      type: 'external'
     },
     {
       title: 'White Paper',
       description: 'Official white paper and technical vision',
       icon: <FaClipboardList className="w-6 h-6" />,
       link: '/whitepaper.pdf',
-      color: 'from-green-500 to-cyan-500'
+      color: 'from-green-500 to-cyan-500',
+      type: 'pdf'
     },
     {
       title: 'Quick Start Guide',
       description: 'Get up and running in minutes',
       icon: <FaLightbulb className="w-6 h-6" />,
-      link: '#quickstart',
-      color: 'from-yellow-500 to-orange-500'
+      link: 'https://xorion-chain.gitbook.io/xorion-chain-docs/',
+      color: 'from-yellow-500 to-orange-500',
+      type: 'external'
     }
   ];
 
@@ -161,13 +164,13 @@ const DevPortal = () => {
                         <h3 className="text-xl font-bold text-white">{card.title}</h3>
                       </div>
                       <p className="text-gray-300 mb-4">{card.description}</p>
-                      {card.title === 'White Paper' ? (
+                      {card.type === 'pdf' ? (
                         <div className="flex items-center gap-2 mt-2">
                           <a
                             href={card.link}
                             download
                             className="flex items-center px-2 py-1 text-xs rounded bg-white/10 hover:bg-white/20 text-blue-400 border border-white/10 hover:border-white/30 transition-all"
-                            title="Download White Paper"
+                            title="Download PDF"
                           >
                             <FaDownload className="w-3 h-3 mr-1" /> Download
                           </a>
@@ -181,6 +184,16 @@ const DevPortal = () => {
                             <FaExternalLinkAlt className="w-3 h-3 mr-1" /> Open
                           </a>
                         </div>
+                      ) : card.type === 'external' ? (
+                        <a
+                          href={card.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors"
+                        >
+                          <span className="text-sm">View Documentation</span>
+                          <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </a>
                       ) : (
                         <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
                           <span className="text-sm">View Documentation</span>
