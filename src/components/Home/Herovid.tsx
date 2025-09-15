@@ -21,7 +21,7 @@ const Herovid = () => {
   const techFeatures = [
     {
       icon: <FaRocket className="w-8 h-8" />,
-      title: "Quantum-Resistant",
+      title: "Quantum Cryptography",
       description: "Post-quantum cryptography that defies computational limits",
       gradient: "from-purple-500 to-pink-500",
       delay: 0.1
@@ -202,6 +202,7 @@ const Herovid = () => {
             <motion.button 
               whileHover={{}}
               whileTap={{}}
+              onClick={() => window.open('https://explorer.xorion.network/explorer', '_blank')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-12 py-6 rounded-3xl text-xl font-bold transition-colors duration-200 flex items-center gap-3"
             >
               <FaRocket className="w-6 h-6" />
@@ -211,6 +212,7 @@ const Herovid = () => {
             <motion.button 
               whileHover={{}}
               whileTap={{}}
+              onClick={() => window.open('https://xorion-chain.gitbook.io/xorion-chain-docs/', '_blank')}
               className="border-2 border-purple-500 hover:bg-purple-500/10 text-purple-400 hover:text-white px-12 py-6 rounded-3xl text-xl font-bold transition-colors duration-200 flex items-center gap-3"
             >
               <FaCode className="w-6 h-6" />

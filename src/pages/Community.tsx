@@ -14,9 +14,9 @@ const forumPosts = [
 ];
 
 const events = [
-  { date: '2024-06-10', title: 'Community AMA', desc: 'Live Q&A with the team' },
-  { date: '2024-06-20', title: 'Hackathon', desc: 'Build on XORION' },
-  { date: '2024-07-01', title: 'Governance Vote', desc: 'Shape the future' },
+  { date: '2024-12-15', title: 'TGE Coming Soon', desc: 'Token Generation Event announcement' },
+  { date: '2024-12-20', title: 'LayerOneX Partnership Coming Soon', desc: 'Strategic partnership announcement' },
+  { date: '2024-12-25', title: 'XOR Listing Coming Soon', desc: 'Exchange listing updates' },
 ];
 
 const socialLinks = [
@@ -28,27 +28,27 @@ const socialLinks = [
   },
   {
     label: "Discord",
-    href: "https://discord.gg/ucc278yJZt",
+    href: "https://discord.com/invite/c4VVaRVdKq",
     icon: FaDiscord,
     description: "Community chat"
   },
   {
     label: "Telegram",
-    href: "https://t.me/Xorion_Chain",
+    href: "https://t.me/XorionChainChannel",
     icon: FaTelegram,
     description: "Community chat"
   },
   {
     label: "GitHub",
-    href: "https://github.com/settings/admin",
+    href: "https://github.com/XORIONCHAIN",
     icon: FaGithub,
     description: "Source code and issues"
   },
   {
-    label: "Reddit",
-    href: "https://www.reddit.com/user/Xorion_Chain/",
+    label: "Linktree",
+    href: "https://linktr.ee/xorionchain",
     icon: FaReddit,
-    description: "Community forum"
+    description: "All our links"
   },
   {
     label: "Medium",
@@ -167,11 +167,11 @@ const Community: React.FC = () => {
               iconBg = "bg-white/10";
               iconColor = "text-white";
               glowColor = 'from-gray-400 to-gray-900';
-            } else if (link.label === "Reddit") {
-              glassBg = "bg-orange-900/40";
-              iconBg = "bg-[#FF4500]/20";
-              iconColor = "text-[#FF4500]";
-              glowColor = 'from-[#FF4500] to-orange-400';
+            } else if (link.label === "Linktree") {
+              glassBg = "bg-green-900/40";
+              iconBg = "bg-[#39E09B]/20";
+              iconColor = "text-[#39E09B]";
+              glowColor = 'from-[#39E09B] to-green-400';
             } else if (link.label === "Medium") {
               glassBg = "bg-green-900/40";
               iconBg = "bg-[#02B875]/20";
@@ -231,8 +231,7 @@ const Community: React.FC = () => {
           {events.map((event) => (
             <div key={event.date} className="flex items-center gap-4 bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
               <div className="flex flex-col items-center justify-center min-w-[70px]">
-                <div className="text-lg font-bold text-cyan-400">{new Date(event.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</div>
-                <div className="text-xs text-gray-400">{new Date(event.date).getFullYear()}</div>
+                
               </div>
               <div>
                 <div className="text-base font-semibold text-white">{event.title}</div>
